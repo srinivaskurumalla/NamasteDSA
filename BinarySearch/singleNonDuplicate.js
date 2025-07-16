@@ -49,7 +49,7 @@ var singleNonDuplicate = function (nums) {
     let m = l + Math.floor((r - l) / 2);
     if (m % 2 == 1) m--; //because first number in pair will always be at even position, so make sure m is even
     if (nums[m] === nums[m + 1]) {
-      l = m + 2;
+      l = m + 2;  //found pair, so go to right side by exlclding pair
     } else {
       r = m;
     }
