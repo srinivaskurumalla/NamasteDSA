@@ -1,12 +1,5 @@
-/**
- * Given an integer array `nums` where every element appears three times except for one, which appears exactly once.
- * Find the single element that appears only once.
- *
- * The solution utilizes bit manipulation. The core idea is that if we sum the bits at each position
- * across all numbers, and then take this sum modulo 3, the result will be the bit at that position
- * for the unique number. This is because bits from numbers appearing three times will contribute
- * to a sum that is a multiple of 3, thus canceling out.
- *
+/** 137
+ 
  * @param {number[]} nums - The input array of numbers.
  * @return {number} - The single number that appears only once.
  */
