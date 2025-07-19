@@ -1,7 +1,8 @@
+//Smaller element will comes to first in each cycle, find minIndex and swap
 var sort = function (arr) {
   for (let i = 0; i < arr.length - 1; i++) {
     let minIndex = i;
-    for (let j = i + 1; j < arr.length; j++) {
+    for (let j = i + 1; j < arr.length; j++) { //so decrease the search space by each time from front => j=i+1
       if (arr[j] < arr[minIndex]) {
         minIndex = j;
       }

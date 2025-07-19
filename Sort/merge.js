@@ -9,9 +9,9 @@ var sortArray = function (nums) {
 };
 
 function merge(left, right) {
- const fruits = ["Banana", "Apple", "Mango", "Cherry"];
-fruits.sort();
-console.log(fruits); // Output: ["Apple", "Banana", "Cherry", "Mango"]
+  const fruits = ["Banana", "Apple", "Mango", "Cherry"];
+  fruits.sort();
+  console.log(fruits); // Output: ["Apple", "Banana", "Cherry", "Mango"]
 
   let resultArr = [];
   let i = 0;

@@ -1,3 +1,4 @@
+//Imagine 1 element is sorted others are not sorted
 var search = function (arr) {
   for (let i = 1; i < arr.length; i++) {
     let current = arr[i];
