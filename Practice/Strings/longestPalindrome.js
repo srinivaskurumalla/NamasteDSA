@@ -70,7 +70,7 @@ var longestPalindrome3 = function (s) {
   //checking for odd palindrome
   for (let i = 1; i < s.length; i++) {
     let j = 1;
-    while (j >= 0 && j < s.length && s[i - j] === s[i + j]) {
+    while (i - j >= 0 && j < s.length && s[i - j] === s[i + j]) {
       let currPal = s.substring(i - j, i + j + 1);
       result = result.length > currPal.length ? result : currPal;
       j++;
@@ -81,7 +81,7 @@ var longestPalindrome3 = function (s) {
 
   for (let i = 0; i < s.length; i++) {
     let j = 1;
-    while (j >= 0 && j < s.length && s[i - j + 1] === s[i + j]) {
+    while (i - j + 1 >= 0 && j < s.length && s[i - j + 1] === s[i + j]) {
       let currPal = s.substring(i - j + 1, i + j + 1);
       result = result.length > currPal.length ? result : currPal;
       j++;
