@@ -29,7 +29,6 @@ var inorderTraversal = function (root) {
 
 //Using Inorder => left - root - right
 var inorderTraversal = function (root) {
-  if (!root) return [];
   let ans = [];
   let stack = [];
   let curr = root;

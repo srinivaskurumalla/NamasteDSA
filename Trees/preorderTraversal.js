@@ -28,14 +28,14 @@ var preorderTraversal = function (root) {
 //Iterative approach
 
 var preorderTraversal = function (root) {
-    let stack = [];
-    let ans = [];
-    if (root != null) stack.push(root);
-    while (stack.length > 0) {
-        let curr = stack.pop();
-        ans.push(curr.val);
-        if (curr.right != null) stack.push(curr.right); //push right first then left
-        if (curr.left != null) stack.push(curr.left); //because we want left to pop first
-    }
-    return ans;
+  if (!root) return [];
+  let stack = [root];
+  let ans = [];
+  while (stack.length > 0) {
+    let curr = stack.pop();
+    ans.push(curr.val);
+    if (curr.right != null) stack.push(curr.right); //push right first then left
+    if (curr.left != null) stack.push(curr.left); //because we want left to pop first
+  }
+  return ans;
 };

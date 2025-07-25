@@ -27,7 +27,7 @@ var postorderTraversal = function (root) {
   return ans;
 };
 
-//Using Iterative, using wo stacks
+//Using Iterative, using two stacks
 var postorderTraversal = function (root) {
   //left -> right -> root
   if (!root) return [];
@@ -40,9 +40,34 @@ var postorderTraversal = function (root) {
     curr.left && s1.push(curr.left);
     curr.right && s1.push(curr.right);
   }
+  //reverse s2
   let ans = [];
   while (s2.length) {
     ans.push(s2.pop());
+  }
+  return ans;
+};
+
+//Iterative using one stack
+var postorderTraversal = function (root) {
+  let stack = [];
+  let ans = [];
+  let curr = root;
+  let lastVisitedNode = null;
+  while (curr || stack.length) {
+    while (curr) {
+      //push all left values
+      stack.push(curr);
+      curr = curr.left;
+    }
+    //peek top element and check if right exist and it is not the lastVisited node, then process it
+    let peek = stack[stack.length - 1];
+    if (peek.right && peek.right != lastVisitedNode) {
+      curr = peek.right;
+    } else {
+      ans.push(peek.val);
+      lastVisitedNode = stack.pop();
+    }
   }
   return ans;
 };
