@@ -4,6 +4,7 @@
  * @return {number}
  */
 var findContentChildren = function (g, s) {
+    //sort the arrays
     g = g.sort((a, b) => a - b)
     s = s.sort((a, b) => a - b)
 

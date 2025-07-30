@@ -28,4 +28,4 @@ let isSuperUgly = (num, primes) => {
   return num === 1;
 };
 
-//above code thrown TLE, will do once DP topic is covered.
+//above code thrown TLE, will do once Dynamic Programming topic is covered.
