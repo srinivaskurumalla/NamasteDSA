@@ -1,3 +1,5 @@
+//Reverse Integer with Overflow Check
+
 function reverse(x) {
   let xCopy = x;
   x = Math.abs(x);
@@ -8,9 +10,11 @@ function reverse(x) {
     x = Math.floor(x / 10);
   }
 
-  if (reverse > Math.pow(2, 31) || reverse < Math.pow(-2, 31) - 1) {
+  if (reverse > 2**31) {
     return 0;
   }
-  return xCopy < 0 ? -reverse:reverse
- 
+  return xCopy < 0 ? -reverse : reverse;
 }
+
+console.log(reverse(-1534236469));
+

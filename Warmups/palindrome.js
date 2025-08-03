@@ -1,19 +1,18 @@
-function isPalindrome(num) {
-    let rev = 0;
-    while (num > 0) {
-        let rem = num%10;
-        rev = (rev*10) + rem;
-        num = Math.floor(num/10);
-    }
-    return rev;
+//Write a function isPalindrome(x) that takes an integer x and returns true if it reads the same backward and forward; otherwise false.
+function isPalindrome(x) {
+  if (x < 0) return false; //negative
+
+  let xCopy = x;
+  let rev = 0;
+  while (x > 0) {
+    let rem = x % 10; //extrace last digit
+    rev = rev * 10 + rem; //build the number in reverse order
+    x = Math.floor(x / 10); //remove last digit from original number
+  }
+  return rev === xCopy;
 }
 
-let n = 1121;
+let n = 11211;
 
 let res = isPalindrome(n);
-if(n === res){
-    console.log(true);
-    
-}
-else console.log(false);
-
+console.log(res);
