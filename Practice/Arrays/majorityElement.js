@@ -48,6 +48,10 @@ var majorityElement2 = function (nums) {
   return majority;
 };
 
+var majorityElement3 = function (nums) {
+  nums = nums.sort((a, b) => a - b);
+  return nums[Math.floor(nums.length / 2)]; //If the array is sorted, the majority element will occupy the center position because it appears more than n/2 times.
+};
 // Boyer-Moore Voting Algorithm Time = O(n), space = O(1)
 
 //  Intuition:
@@ -55,8 +59,7 @@ var majorityElement2 = function (nums) {
 
 // So, even after cancelling out all non-majority elements, the majority one will be left.
 
-
-var majorityElement = function(nums) {
+var majorityElement = function (nums) {
   let count = 0;
   let candidate = null;
 
@@ -64,7 +67,7 @@ var majorityElement = function(nums) {
     if (count === 0) {
       candidate = num;
     }
-    count += (num === candidate) ? 1 : -1;
+    count += num === candidate ? 1 : -1;
   }
 
   return candidate;
