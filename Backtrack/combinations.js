@@ -10,13 +10,13 @@ var combine = function (n, k) {
       result.push([...path]);
     }
 
-    for(let i=start;i<=n;i++){
-        path.push(i);
-        backtrack(path,i+1);
-        path.pop();
-    };
+    for (let i = start; i <= n; i++) {
+      path.push(i);
+      backtrack(path, i + 1);
+      path.pop();
+    }
   };
 
-  backtrack([],1);
+  backtrack([], 1);
   return result;
 };
